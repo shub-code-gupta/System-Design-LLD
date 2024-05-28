@@ -73,6 +73,7 @@ public class UrlController {
 		if (urlRet.getExpirationDate().isBefore(LocalDateTime.now())) {
 
 			urlService.deleteUrl(urlRet);
+			
 			UrlErrorResponseDto error = new UrlErrorResponseDto();
 			error.setStatus("SHORT URL IS EXPIRED PLEASE CREATE AGAIN");
 			error.setError(HttpStatus.BAD_REQUEST);
